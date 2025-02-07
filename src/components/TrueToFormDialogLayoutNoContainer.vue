@@ -43,7 +43,8 @@
 <script>
 export default {
   name: 'TrueToForm',
-  mounted() {
+  async mounted() {
+    await this.$nextTick()
     this.LoadWidgetScript()
   },
   methods: {
@@ -54,7 +55,7 @@ export default {
       // Check if the script is already loaded
       if (
         document.querySelector(
-          'script[src="https://dev-ttf-widget.pages.dev/assets/integrations/custom.js"]',
+          'script[src="https://dev-ttf-widget.pages.dev/assets/integrations/widget.js"]',
         )
       ) {
         this.InitializeWidget()
